@@ -10,7 +10,7 @@ function HelloWorld() {
     <div className="container">
       <div className="text">HelloWorld</div>
       <div className="button" onClick={() => navigate(-1)}>
-        {deferedWindth}
+        {deferedWindth.deferedSize}
       </div>
     </div>
   );

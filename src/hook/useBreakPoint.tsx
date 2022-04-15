@@ -1,23 +1,21 @@
 import React, { useDeferredValue, useEffect, useState } from "react";
 
 type BreakPointConfig = {
-  xs?: number; // < 576px
-  sm?: number; // >=576px
-  md?: number; // >= 768px
-  lg?: number; // >= 960px
-  xl?: number; // >= 1200px
-  xxl?: number; // >=1400
+  sm?: number; // 576px
+  md?: number; // 768px
+  lg?: number; // 960px
+  xl?: number; // 1200px
+  xxl?: number; // 1400px
 };
 
-type BreakPoint = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+type BreakPoint = "sm" | "md" | "lg" | "xl" | "xxl";
 
 const defaultBreakPoints: BreakPointConfig = {
-  xs: 576,
-  sm: 768,
-  md: 960,
-  lg: 1200,
-  xl: 1400,
-  xxl: 1600,
+  sm: 576,
+  md: 768,
+  lg: 960,
+  xl: 1200,
+  xxl: 1400,
 };
 
 function useBreakPoint(breakPoints: BreakPointConfig = defaultBreakPoints) {
@@ -35,14 +33,22 @@ function useBreakPoint(breakPoints: BreakPointConfig = defaultBreakPoints) {
   useEffect(() => {
     let keys = Object.keys(breakPoints) as BreakPoint[];
     for (let i = 0; i < Object.keys(breakPoints).length; i++) {
+      if (currentWidth < breakPoints["sm"]) {
+        setSize("xs");
+        break;
+      }
       if (breakPoints[keys[i]] && currentWidth < breakPoints[keys[i + 1]]) {
         setSize(keys[i]);
+        break;
+      }
+      if (currentWidth > breakPoints["xxl"]) {
+        setSize("xxl");
         break;
       }
     }
   }, [deferedWidth]);
 
-  return [deferedWidth, deferedSize];
+  return { deferedWidth, deferedSize };
 }
 
 export default useBreakPoint;
