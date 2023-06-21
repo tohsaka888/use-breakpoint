@@ -111,7 +111,7 @@
     "cross-spawn": "^7.0.3",
     "compression": "^1.7.3",
     "css-select": "^4.3.0",
-    "concat-map": "^0.0.1",
+    "concat-map": "^0.0.2",
     "convert-source-map": "^1.8.0",
     "cssesc": "^3.0.0",
     "css-what": "^6.1.0",
