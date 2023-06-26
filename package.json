@@ -382,7 +382,7 @@
     "scheduler": "^0.21.0",
     "safe-buffer": "^5.2.1",
     "safer-buffer": "^2.1.2",
-    "semver": "^6.3.0",
+    "semver": "^7.0.0",
     "retry": "^0.13.1",
     "sax": "^1.2.4",
     "send": "^0.17.2",
