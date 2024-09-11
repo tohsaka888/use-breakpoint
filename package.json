@@ -301,7 +301,7 @@
     "path-is-absolute": "^1.0.1",
     "nth-check": "^2.0.1",
     "path-type": "^4.0.0",
-    "path-to-regexp": "^0.1.7",
+    "path-to-regexp": "^3.0.0",
     "p-retry": "^4.6.1",
     "picocolors": "^1.0.0",
     "picomatch": "^2.3.1",
